@@ -1,0 +1,13 @@
+from PIL import Image, ImageFilter  # imports the library
+img = Image.open('./images/burmashur.jpg')
+filter_image = img.convert('L')
+# print(filter_image)
+# filter_image.save('l.png', 'png')
+# crooked_image = filter_image.rotate(180)
+# crooked_image.show()
+# crooked_image.save('crooked.png', 'png')
+# resize_image = filter_image.resize((200, 200))
+# resize_image.save('resize.png', 'png')
+box = (100, 100, 400, 400)
+cropped_image = filter_image.crop(box)
+cropped_image.save('cropped.png', 'png')
